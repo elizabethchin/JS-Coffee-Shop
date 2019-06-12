@@ -55,10 +55,10 @@
 
     // Set these variables to their DOM elements
 
-    const coffeeImage = document.querySelector('coffee-image');
-    const oldSrc = logo.getAttribute('src');
-    logo.setAttribute('src', static/coffee_beans.jpg)
-    const revenueMessage;
+    const coffeeImage = document.querySelector('#coffee-image');
+    //const oldSrc = coffeeImage.getAttribute('src');optional
+    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    //const revenueMessage;
 
     // use this JavaScript object in further study step
 
@@ -68,6 +68,29 @@
       'latte': 4.15,
       'hot chocolate': 2.50
     };
+
+    const button = document.querySelector('#coffee-image');
+
+    function makeCoffee(evt){
+      const coffeeImage = document.querySelector('#coffee-image');
+      const oldSrc = coffeeImage.getAttribute('src');
+      coffeeImage.setAttribute('src', 'static/coffee_mug.jpg')
+    }
+
+    function resetImage() {
+      const coffeeImage = document.querySelector('#coffee-image');
+      const oldSrc = coffeeImage.getAttribute('src');
+      coffeeImage.setAttribute('src', 'static/coffee_beans.jpg')
+    }
+
+    function coffeeTimer() {
+      setTimeout(makeCoffee, 1500)
+      setTimeout(resetImage, 2500)
+    }
+
+    button.addEventListener('click', coffeeTimer);
+    // const func1 = (x, y) => { return x+y; }
+    // button.addEventListener('click', () => setTimeout(makeCoffee, 1500))
 
 
   </script>
