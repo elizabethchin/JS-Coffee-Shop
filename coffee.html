@@ -74,18 +74,25 @@
     function makeCoffee(evt){
       const coffeeImage = document.querySelector('#coffee-image');
       const oldSrc = coffeeImage.getAttribute('src');
-      coffeeImage.setAttribute('src', 'static/coffee_mug.jpg')
+      coffeeImage.setAttribute('src', 'static/coffee_machine.jpg')
     }
 
-    function resetImage() {
+    function resetImage(evt) {
       const coffeeImage = document.querySelector('#coffee-image');
       const oldSrc = coffeeImage.getAttribute('src');
       coffeeImage.setAttribute('src', 'static/coffee_beans.jpg')
     }
+    function coffeeMug(evt) {
+      const coffeeImage = document.querySelector('#coffee-image');
+      const oldSrc = coffeeImage.getAttribute('src');
+      coffeeImage.setAttribute('src', 'static/coffee_mug.jpg')
+    }
 
-    function coffeeTimer() {
-      setTimeout(makeCoffee, 1500)
-      setTimeout(resetImage, 2500)
+    function coffeeTimer(evt) {
+      console.log(evt)
+      setTimeout(makeCoffee, 1500);
+      setTimeout(coffeeMug, 2500);
+      setTimeout(resetImage, 4500);
     }
 
     button.addEventListener('click', coffeeTimer);
